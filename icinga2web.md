@@ -26,7 +26,7 @@ yum install icingaweb2 icingacli -y
 We also need a webserver installed, and started and enabled.
 
 ``` bash
-yum install httpd
+yum install httpd -y 
 systemctl start httpd.service
 systemctl enable httpd.service
 ``` 
@@ -147,3 +147,7 @@ After this we can enter the necessary details and the validation will succeed.
 We can and SHOULD protect specific vairables from being logged.
 
 ![Security](/pics/sec.PNG)
+
+After we did everything correctly the following welcomes us.
+
+![Success](/pics/success.PNG)

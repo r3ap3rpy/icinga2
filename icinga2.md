@@ -72,7 +72,6 @@ mysql -u root -p
 CREATE DATABASE icinga;
 GRANT SELECT, INSERT, UPDATE, DELETE, DROP, CREATE VIEW, INDEX, EXECUTE ON icinga.* TO 'icinga'@'localhost' IDENTIFIED BY 'icinga';
 quit
-
 ``` 
 
 Now we apply the schema to our **icinga** database.
@@ -87,3 +86,4 @@ Finally we enable the IDO module and restart icinga2.
 icinga2 feature enable ido-mysql
 systemctl restart icinga2
 ``` 
+
