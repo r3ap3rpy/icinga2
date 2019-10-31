@@ -151,3 +151,7 @@ We can and SHOULD protect specific vairables from being logged.
 After we did everything correctly the following welcomes us.
 
 ![Success](/pics/success.PNG)
+
+After we login with the appropriate user this is the landing page.
+
+![Landing](/pics/landing.PNG)
