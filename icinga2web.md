@@ -75,7 +75,9 @@ Now we can navigate to the browser and complete our setup. The url is "http://yo
 
 We insert the token.
 
-![Drag Racing](pics/token.png)
+.. image:: ./pics/token.PNG
+   :alt: The database
+   :align: center
 
 sudo vi /etc/icinga2/features-available/ido-mysql.conf
 /**
