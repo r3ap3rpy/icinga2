@@ -77,28 +77,73 @@ We insert the token.
 
 ![GitHub Logo](/pics/token.PNG)
 
-sudo vi /etc/icinga2/features-available/ido-mysql.conf
-/**
- * The db_ido_mysql library implements IDO functionality
- * for MySQL.
- */
-library "db_ido_mysql"
-object IdoMysqlConnection "ido-mysql" {
-  user = "icinga"
-  password = "icinga"
-  host = "localhost"
-  database = "icinga"
-}
+We only want to install the monitoring module.
 
+![Monitoring](/pics/monitoring.PNG)
 
+If we did the steps correctly everything is green.
 
-#### api CONFIG
+![Green](/pics/green.PNG)
 
-vim /etc/icinga2/conf.d/api-users.conf
+We choose DB authentication.
 
+![DBAuth](/pics/dbauth.PNG)
+
+Now we need the username, and here we use icingaweb2 as database.
+
+![DBResource](/pics/dbres.PNG) 
+
+For the setup we need the root and its password to complete.
+
+![DBRoot](/pics/dbroot.PNG)
+
+Our backend is the default icingaweb2.
+
+![DBBackend](/pics/dbbackend.PNG)
+
+We need a user to login.
+
+![WebUser](/pics/webuser.PNG)
+
+We do not touch the app config.
+
+![AppConfig](/pics/appconf.PNG)
+
+Now we configure web2.
+
+![Webback](/pics/webback.PNG)
+
+We need the IDO configured.
+
+![IDO](/pics/ido.PNG)
+
+We would like to configure the API of the icinga2 instance to be used, not a local or remote command file.
+
+For this we need to issue the following commands.
+
+``` bash
+icinga2 api setup
+```
+
+Then add the following content to this file: vim /etc/icinga2/conf.d/api-users.conf
+
+``` bash
 object ApiUser "icingaweb2" {
   password = "Wijsn8Z9eRs5E25d"
   permissions = [ "status/query", "actions/*", "objects/modify/*", "objects/query/*" ]
 }
+```
 
+Then restart the icinga2.
+
+``` bash
 systemctl restart icinga2
+```
+
+After this we can enter the necessary details and the validation will succeed.
+
+![API](/pics/api.PNG)
+
+We can and SHOULD protect specific vairables from being logged.
+
+![Security](/pics/sec.PNG)
