@@ -27,3 +27,8 @@ object Host "2019A" {
 	vars.os = "Windows"
 }
 ```
+In order to see the changes on the Web UI we need to restart icinga2
+
+``` bash
+systemctl restart icinga2
+```
