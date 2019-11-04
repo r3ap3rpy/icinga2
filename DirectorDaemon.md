@@ -64,5 +64,5 @@ Then enable and start the service!
 
 ``` bash
 systemctl enable icinga-director.service
-systemctl enable icinga-director.service
+systemctl start icinga-director.service
 ```
